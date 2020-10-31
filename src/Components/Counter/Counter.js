@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-const Counter = () => {
+export const Counter = () => {
     return (
         <div className='counter'>
             <div>-</div>
@@ -9,5 +9,3 @@ const Counter = () => {
         </div>
     );
 };
-
-export default Counter;
