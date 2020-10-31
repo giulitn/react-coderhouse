@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './index'
+
+
+// Components
+import { NavBar } from './Components/Navbar/Navbar';
+import Counter from './Components/Counter';
+
+// Containers
+import Home from './Containers/HomeContainer';
+  
+// Styles 
+
+// JS
+import M from 'materialize-css';
+
+
 
 function App() {
+  
+  useEffect(() => {
+    M.AutoInit();
+  }, [] );
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <header>
+          <NavBar/>
+        </header>
+        <section>
+          <Home greeting ='¡Hola! Pronto vamos a abrir nuestra tienda online. ¡Volvé en unos días!'/>
+        </section>
+        <section>
+          <Count/>
     </div>
-  );
+    
+  )
 }
 
 export default App;
