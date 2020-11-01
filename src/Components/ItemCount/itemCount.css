@@ -1,0 +1,10 @@
+.count {
+    display: flex;
+    flex-direction: row;
+}
+
+.number {
+    padding: 10px;
+}
+
+

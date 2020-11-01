@@ -1,14 +1,11 @@
 // Todo lo que es contenedor tiene la lógica y retorna el componente.
-
 import React from 'react';
+import Home from '../Components/Home/Home'
 
-function Home(props) {
-    return (
-        <div>
-            <p></p>
-
-        </div>
-    );
-}
-
-export default Home;
+const HomeContainer = ({greeting}) => { 
+   return (
+        <Home greeting={greeting}/>
+   ) 
+  } 
+  
+  export default HomeContainer;

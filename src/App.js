@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import './index'
 
-
 // Components
 import { NavBar } from './Components/Navbar/Navbar';
-import { Counter } from './Components/Counter/Counter';
 
 // Containers
 import Home from './Containers/HomeContainer';
 
-// Styles 
-
-// JS
+// JS 
 import M from 'materialize-css';
 
 
@@ -30,10 +26,6 @@ function App() {
       <section>
         <Home greeting='¡Hola! Pronto vamos a abrir nuestra tienda online. ¡Volvé en unos días!' />
       </section>
-      <section>
-        <Counter />
-      </section>
-
     </div>
 
   )
