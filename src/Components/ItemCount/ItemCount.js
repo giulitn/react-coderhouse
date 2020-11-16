@@ -5,14 +5,14 @@ export default function itemCount({ counter, onAdd}) {
     return (
         <div className='count container s12 m4 l8'>
 
-            <button class="btn-floating grey" onClick={() => onAdd('remove')}>
-                <i class="material-icons">remove</i>
+            <button className="btn-floating grey" onClick={() => onAdd('remove')}>
+                <i className="material-icons">remove</i>
             </button>
             <div className='number'>
                 {counter}
             </div>
             <button className="btn-floating grey" onClick={() => onAdd('add')}>
-                <i class="material-icons">add</i>
+                <i className="material-icons">add</i>
             </button>
             
         </div>

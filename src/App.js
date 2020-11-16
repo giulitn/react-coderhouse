@@ -7,7 +7,7 @@ import { NavBar } from './Components/Navbar/Navbar';
 // Containers
 import Home from './Containers/HomeContainer';
 
-// JS 
+// Styles 
 import M from 'materialize-css';
 
 
@@ -24,7 +24,7 @@ function App() {
         <NavBar />
       </header>
       <section>
-        <Home greeting='¡Hola! Pronto vamos a abrir nuestra tienda online. ¡Volvé en unos días!' />
+        <Home/>
       </section>
     </div>
 

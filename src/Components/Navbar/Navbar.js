@@ -12,7 +12,7 @@ export const NavBar = ({ click, children }) => {
                     <div className="row">
                         {/* eslint-disable-next-line */}
                         <a href="#" className="brand-logo">
-                            <i class="material-icons align-left">favorite_border</i>
+                            <i className="material-icons align-left">favorite_border</i>
                         </a>
                         <div>
                             <CartIcon />
