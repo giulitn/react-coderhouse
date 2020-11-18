@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index'
 
 // Components
@@ -19,15 +20,18 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <header>
-        <NavBar />
-      </header>
-      <section>
-        <Home/>
-      </section>
-    </div>
-
+    <BrowserRouter>
+      <div>
+        <header>
+          <NavBar/>
+        </header>
+        <Switch>
+          <Route exact path='/' >
+            <Home/>
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   )
 }
 

@@ -2,9 +2,9 @@
 import React from 'react';
 import Home from '../Components/Home/Home'
 
-const HomeContainer = ({greeting}) => { 
+const HomeContainer = () => { 
    return (
-        <Home greeting={greeting}/>
+        <Home/>
    ) 
   } 
   
