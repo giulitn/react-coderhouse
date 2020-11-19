@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'react-materialize';
+import { NavLink } from 'react-router-dom';
 import './Item.css'
 
 function Item(props) {
@@ -13,8 +15,9 @@ function Item(props) {
                         <p>${props.price}</p>
                     </div>
                     <div className="card-action">
-                  
-                        <a href="#">Ver detalle</a>
+                    <NavLink to={`/item/${props.id}`}>
+                        <Button>Ver detalle</Button> 
+                    </NavLink>
                     </div>
                 </div>
             </div>

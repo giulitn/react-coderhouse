@@ -11,10 +11,6 @@ export default function ItemCountContainer({ min, max }) {
             setCounter(counter + 1);
         }
     }
-
-
-
-
     return (
         <ItemCount counter={counter} onAdd={onAdd} />
     )

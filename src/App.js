@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './index'
 
 // Components
 import { NavBar } from './Components/Navbar/Navbar';
-
 // Containers
-import Home from './Containers/HomeContainer';
+import HomeContainer from './Containers/HomeContainer';
+import ItemDetailContainer from './Containers/ItemDetailContainer';
+
 
 // Styles 
 import M from 'materialize-css';
-
-
 
 function App() {
 
@@ -23,12 +21,11 @@ function App() {
     <BrowserRouter>
       <div>
         <header>
-          <NavBar/>
+          <NavBar />
         </header>
         <Switch>
-          <Route exact path='/' >
-            <Home/>
-          </Route>
+          <Route exact path='/' render={() => <HomeContainer />} />
+          <Route path='/item/:id' render={() => <ItemDetailContainer />} />
         </Switch>
       </div>
     </BrowserRouter>

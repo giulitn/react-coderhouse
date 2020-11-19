@@ -1,36 +1,51 @@
-// import React, { useState, useEffect } from 'react';
-// import ItemDetail from '../Components/ItemDetail/ItemDetail';
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import ItemDetail from '../Components/ItemDetail/ItemDetail'
 
 
+export default function ItemDetailContainer() {
 
-// const ItemDetailContainer = () => {
-//     const [products, setProducts] = useState( [] );
-//     useEffect(() => {
-//         const delay = setTimeout(() => {
-//             const getProducts = fetch('https://api.mercadolibre.com/sites/MLA/search?q=remera&limit=12'); // esto es ASYNC, por eso después va un "then"
-//             getProducts
-//                 .then((res) => {
-//                     const data = res.json();
-//                     return data;
-//                 })
-//                 .then((data) => {
-//                     console.log("mis datos:", data.results);
-//                     setProducts(data.results);
-//                 }
-//                 )
-//         }, 2000);
-//         return () => clearTimeout(delay);
-//     }, []
-//     );
+    const [loading, setLoading] = useState(true);
+    const [product, setProduct] = useState([]);
 
-//     return (
-//         <div>
-//             {products.map((product) => (
-//                 <Item title={product.title} id={product.id} price={product.price} img={product.picture} />
-//             )
-//             )}
-//         </div>
-//     );
-// }
 
-// export default ItemListContainer;
+    const { id } = useParams();
+
+    useEffect(() => {
+        const delay = setTimeout(() => {
+
+            const getProduct = fetch(`https://api.mercadolibre.com/items/${id}?include_attributes=all`)
+            getProduct
+                .then((res) => {
+                    const data = res.json();
+                    return data;
+                })
+                .then((data) => {
+                    console.log(data, 'holaaa!!!');
+                    setProduct(data);
+                })
+                .catch((error) => {
+                    console.log("Hubo un error al querer recuperar el ítem: ", error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                })
+        }, 3000);
+        return () => clearTimeout(delay);
+    }, [id])
+
+    if (!loading) {
+        return (
+            <div>
+                <ItemDetail product={product} />
+            </div>
+        )
+    }
+    if (loading) {
+        return (
+            <div className="progress">
+                <div class="indeterminate"></div>
+            </div>
+        );
+    }
+}
